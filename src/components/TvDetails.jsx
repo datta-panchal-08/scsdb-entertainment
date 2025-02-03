@@ -68,7 +68,7 @@ const TvDetails = () => {
 
       {/* Poster */}
       <div className="w-full mb-5 flex">
-        <div className=" flex flex-col items-center justify-start min-w-[18%] mr-20">
+        <div className=" flex flex-col items-center justify-start  min-w-[25%] mr-20">
           <img
             className=" shadow-[8px_17px_38px_2px_rgba(0,0,0,.7)] h-[40vh] object-cover"
             src={
@@ -135,7 +135,7 @@ const TvDetails = () => {
           </div>
         </div>
 
-        <div className="content ml-[4%] text-white">
+        <div className="content  text-white">
           <h1 className="text-4xl font-black mt-3 ">
             {info.details.title ||
               info.details.original_title ||

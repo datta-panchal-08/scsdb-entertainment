@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncLoadMovie } from "../store/actions/MovieActions";
-import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { removeMovie } from "../store/reducers/MovieSlice";
 import Spinner from "../components/partials/Spinner";
-import HorizontalCards from './partials/HorizontalCards'
-import noimage from "/noimage.jpg"
+import HorizontalCards from "./partials/HorizontalCards";
+import noimage from "/noimage.jpg";
 const MovieDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -18,7 +24,7 @@ const MovieDetails = () => {
     return () => {
       dispatch(removeMovie());
     };
-  },[id]);
+  }, [id]);
 
   return info ? (
     <div
@@ -61,7 +67,7 @@ const MovieDetails = () => {
 
       {/* Poster */}
       <div className="w-full mb-5 flex">
-        <div className=" flex flex-col items-center justify-start min-w-[18%] mr-30">
+        <div className=" flex flex-col items-center justify-start min-w-[25%] mr-20">
           <img
             className=" shadow-[8px_17px_38px_2px_rgba(0,0,0,.7)] h-[40vh] object-cover"
             src={
@@ -77,7 +83,7 @@ const MovieDetails = () => {
           <div className="w-fit flex flex-col gap-y-5 mt-5">
             {info.watchproviders && info.watchproviders.flatrate && (
               <div className="flex items-center text-white gap-x-2">
-                <h1  className="text-nowrap">Available on Platforms</h1>
+                <h1 className="text-nowrap">Available on Platforms</h1>
                 {info.watchproviders.flatrate.map((item, i) => {
                   return (
                     <img
@@ -128,7 +134,7 @@ const MovieDetails = () => {
           </div>
         </div>
 
-        <div className="content ml-[4%] text-white">
+        <div className="content text-white">
           <h1 className="text-4xl font-black mt-3 ">
             {info.details.title ||
               info.details.original_title ||
@@ -168,24 +174,29 @@ const MovieDetails = () => {
           <p className="mb-5">
             {info.translations.map((t) => t.english_name).join(", ")}
           </p>
-           {
-            info.videos &&   <Link
-            className="px-4 py-3 rounded-lg bg-[#6556CD]"
-            to={`${pathname}/trailer`}
-          >
-            <i className="ri-play-large-fill mr-1 text-sm"></i> Play Trailer
-          </Link>
-           }
+          {info.videos && (
+            <Link
+              className="px-4 py-3 rounded-lg bg-[#6556CD]"
+              to={`${pathname}/trailer`}
+            >
+              <i className="ri-play-large-fill mr-1 text-sm"></i> Play Trailer
+            </Link>
+          )}
         </div>
       </div>
 
       {/* Part  3 Recommndations and similar */}
       <hr className="mt-4 mb-3 border-none h-[1px] bg-zinc-200" />
-      <h1 className="font-bold text-white text-2xl mb-3">Recommendations & Similar</h1>
-      <HorizontalCards data={info.recommendations.length > 0 ? info.recommendations: info.similar} />
+      <h1 className="font-bold text-white text-2xl mb-3">
+        Recommendations & Similar
+      </h1>
+      <HorizontalCards
+        data={
+          info.recommendations.length > 0 ? info.recommendations : info.similar
+        }
+      />
 
-     <Outlet/>
-
+      <Outlet />
     </div>
   ) : (
     <Spinner />

@@ -61,7 +61,7 @@ const PersonDetails = () => {
       {/* Main Content */}
       <div className="flex w-full h-fit overflow-y-auto mt-3">
         {/* Profile Image */}
-        <div className="min-w-[18%] h-fit flex-col relative gap-4 mr-20 ">
+        <div className="min-w-fit h-fit flex-col relative gap-4 mr-10 ">
           <img
             className=" shadow-[8px_17px_38px_2px_rgba(0,0,0,.7)] h-[40vh] w-full object-cover"
             src={
@@ -102,17 +102,25 @@ const PersonDetails = () => {
               )}
 
               {info.external_ids.facebook_id && (
-                <a 
+                <a
                   href={`https://www.facebook.com/${info.external_ids.facebook_id}`}
                   className="ri-facebook-circle-fill text-xl font-semibold text-zinc-300"
                 ></a>
               )}
             </div>
-            <h3 className="text-xl font-semibold text-zinc-300">Known For : {info.details.known_for_department} </h3>
-            <h3 className="text-xl font-semibold text-zinc-300">Born In : {info.details.birthday}</h3>
-            {
-             info.details.deathday ?  <h3 className="text-xl font-semibold text-zinc-300">Passed Away: {info.details.deathday}</h3> : <h3 className="text-xl font-semibold text-zinc-300">Alive</h3>
-            }
+            <h3 className="text-xl font-semibold text-zinc-300">
+              Known For : {info.details.known_for_department}{" "}
+            </h3>
+            <h3 className="text-xl font-semibold text-zinc-300">
+              Born In : {info.details.birthday}
+            </h3>
+            {info.details.deathday ? (
+              <h3 className="text-xl font-semibold text-zinc-300">
+                Passed Away: {info.details.deathday}
+              </h3>
+            ) : (
+              <h3 className="text-xl font-semibold text-zinc-300">Alive</h3>
+            )}
           </div>
         </div>
 
