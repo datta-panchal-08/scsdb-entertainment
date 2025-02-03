@@ -68,7 +68,7 @@ const TvDetails = () => {
 
       {/* Poster */}
       <div className="w-full mb-5 flex">
-        <div className=" flex flex-col items-center justify-start  min-w-[25%] mr-20">
+        <div className=" flex flex-col items-center justify-start  max-w-[25%] mr-20">
           <img
             className=" shadow-[8px_17px_38px_2px_rgba(0,0,0,.7)] h-[40vh] object-cover"
             src={
