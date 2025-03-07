@@ -24,6 +24,7 @@ const ContactUs = () => {
         <section className="mt-10">
           <h2 className="text-xl font-semibold">Contact Information</h2>
           <ul className="mt-4 text-gray-300 list-none">
+          <li><strong>Developer:</strong> <a  className="text-blue-400 hover:underline">Dattatray Panchal</a></li>
             <li><strong>Email:</strong> <a href="mailto:consistentcoderdatta@gmail.com" className="text-blue-400 hover:underline">consistentcoderdatta@gmail.com</a></li>
             <li><strong>Phone:</strong> <a href="tel:+919579011569" className="text-blue-400 hover:underline">+91 9579011569</a></li>
           </ul>
