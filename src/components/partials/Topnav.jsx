@@ -7,7 +7,7 @@ const Topnav = () => {
   const [query, setquery] = useState("");
   const [searches, setsearches] = useState([]);
   const { pathname } = useLocation();
-  const hideSearchBoxPaths = ['/trendings', '/popular', '/tv', '/movies', '/persons'];
+  const hideSearchBoxPaths = ['/','/trendings', '/popular', '/tv', '/movies', '/persons'];
 
   const getSearches = async () => {
     try {
@@ -23,10 +23,10 @@ const Topnav = () => {
   }, [query]);
 
   return (
-    <div className="w-[100%] px-5 md:px-0 md:w-[80%] h-[10vh] relative flex mx-auto items-center">
+    <div className="  flex w-[100%] px-5 md:px-0 md:w-[80%] h-[10vh] relative  mx-auto items-center">
       {
         !hideSearchBoxPaths.includes(pathname) ? (
-          <div className={`md:block  ${pathname === '/' ? 'block':'hidden'}`}>
+          <div className={`md:block hidden`}>
             <i className="text-2xl text-zinc-400 ri-search-2-line"></i>
             <input
               onChange={(e) => setquery(e.target.value)}

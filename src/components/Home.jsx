@@ -7,11 +7,13 @@ import HorizontalCards from './partials/HorizontalCards'
 import Dropdown from './partials/Dropdown'
 import Spinner from './partials/Spinner'
 import MobileNav from './partials/MobileNav'
+import { useLocation } from 'react-router-dom'
 const Home = () => {
     document.title = "SCSDB | Homepage";
     const [wallpaper, setWallpaper] = useState(null);
     const [trending,setTrending] = useState(null);
     const[category,setCategory] = useState("all");
+    const {pathname} = useLocation();
 
     const getHeader = async () =>{
       try {
@@ -42,10 +44,12 @@ const Home = () => {
 
   return wallpaper && trending ?  (
     <>
-    <Sidenav/>\
+    <Sidenav/>
     <div className='w-[100%] md:w-[80%] px-0 h-full overflow-hidden overflow-y-auto'>
     <MobileNav/>
-      <Topnav/>
+       <div className={`${pathname === '/' ? 'hidden md:block':''}`}>
+       <Topnav/>
+       </div>
       <Header data={wallpaper}/>
       <div className=' w-full py-3 px-4 gap-49 md:gap-0    flex justify-between '>
         <h1 className='md:text-2xl text-xl font-semibold text-zinc-400'>Trending</h1>
