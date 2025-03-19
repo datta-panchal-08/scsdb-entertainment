@@ -26,7 +26,7 @@ const Persons = () => {
   return persons.length > 0 ? (
     <div className="w-screen h-screen  overflow-y-auto bg-[#1F1E24]">
     <div className="w-full flex items-center justify-between p-[2%]">
-      <h1 className="text-2xl font-semibold text-zinc-400">
+      <h1 className="md:text-2xl text-xl font-semibold text-zinc-400">
         <i
           onClick={() => navigation(-1)}
           className="hover:text-[#6556CD] ri-arrow-left-line"

@@ -13,12 +13,12 @@ const Header = ({ data }) => {
         backgroundPosition: "center",
         backgroundRepeat:"no-repeat"
       }}
-      className="w-full h-[50vh] flex flex-col justify-end items-start p-[5%] text-white"
+      className="w-full md:h-[50vh] h-[30vh] flex flex-col justify-end items-start p-[5%] text-white"
     >
-      <h1 className="text-4xl text-white font-bold">
+      <h1 className="md:text-4xl text-xl text-white font-bold">
       {data.original_title || data.name || data.title}
       </h1>
-      <p className="w-[70%] mt-3 mb-3">{data.overview.slice(0,150)}</p>
+      <p className="md:w-[70%] w-[95%] mt-3 mb-3">{data.overview.slice(0,150)}</p>
         <p>
       <i className="text-yellow-500 ri-megaphone-fill"></i>{data.release_date || data.first_air_date || "No Information"}
       <i className="text-yellow-500 ml-5  ri-album-fill"></i>{data.media_type}
