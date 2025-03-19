@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Card from './partials/Card';
 import Topnav from './partials/Topnav';
 import { useNavigate } from 'react-router-dom';
-import Dropdown from './partials/Dropdown';
 import Spinner from './partials/Spinner';
 
 const Persons = () => {
