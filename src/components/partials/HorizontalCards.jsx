@@ -7,7 +7,7 @@ const HorizontalCards = ({data}) => {
       { data.length > 0 ? data.map((item, index) => (
         <Link to={`/${item.media_type}/details/${item.id}`} key={index} className=" w-full md:min-w-[15%] bg-zinc-900 mr-5 mb-5 md:h-[35vh] h-[40%] md:overflow-y-auto">
           <img
-            className="md:h-[55%] h-[55vh] w-full object-cover"
+            className="md:h-[55%] h-[45vh] w-full object-cover"
             src={ item.backdrop_path || item.poster_path ? `https://image.tmdb.org/t/p/original/${
               item.backdrop_path || item.poster_path
             }`:noimage}

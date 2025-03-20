@@ -23,11 +23,10 @@ const PersonDetails = () => {
     <div
       style={{
         background: `linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.5), rgba(0,0,0,.9)), 
-                 url(https://image.tmdb.org/t/p/original/${
-                   info.details.backdrop_path ||
-                   info.details.poster_path ||
-                   info.details.profile_path
-                 })`,
+                 url(https://image.tmdb.org/t/p/original/${info.details.backdrop_path ||
+          info.details.poster_path ||
+          info.details.profile_path
+          })`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -66,13 +65,12 @@ const PersonDetails = () => {
             className=" shadow-[8px_17px_38px_2px_rgba(0,0,0,.7)] h-[40vh] w-full object-cover"
             src={
               info.details.backdrop_path ||
-              info.details.poster_path ||
-              info.details.profile_path
-                ? `https://image.tmdb.org/t/p/original/${
-                    info.details.backdrop_path ||
-                    info.details.poster_path ||
-                    info.details.profile_path
-                  }`
+                info.details.poster_path ||
+                info.details.profile_path
+                ? `https://image.tmdb.org/t/p/original/${info.details.backdrop_path ||
+                info.details.poster_path ||
+                info.details.profile_path
+                }`
                 : noimage
             }
             alt=""
@@ -129,11 +127,10 @@ const PersonDetails = () => {
         <div>
           <h1 className="text-4xl font-black mb-1">{info.details.name}</h1>
           <h2 className="">
-            {" "}
             <span className="text-xl font-semibold">Also Know As : </span>
             <span className="tex-xs">
               {info.details.also_known_as.map((item, i) => item).join(", ")}
-            </span>{" "}
+            </span>
           </h2>
           <h1 className="mt-3 text-xl ">
             Birth Place : {info.details.place_of_birth}

@@ -27,7 +27,7 @@ const Dropdown = ({ title, options, setCategory }) => {
         </select>
         </div> */}
 
-      <div className="relative w-full max-w-[10em] mx-auto ">
+      <div className="relative w-full max-w-[10em] mx-auto z-50">
         <button
           className="w-full py-2 px-4 bg-gray-800 text-white text-sm font-sans rounded-md flex justify-between items-center focus:outline-none hover:bg-indigo-600"
           onClick={toggleDropdown}
