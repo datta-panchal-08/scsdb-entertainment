@@ -115,9 +115,3 @@ select::-ms-expand{
 secondary - #6556CD */
 
     
-@media (max-width: 640px) {
-    .select {
-        display: none;
-    }
-    
-}

@@ -51,7 +51,7 @@ const Home = () => {
        <Topnav/>
        </div>
       <Header data={wallpaper}/>
-      <div className=' w-full py-3 px-4 gap-49 md:gap-0    flex justify-between '>
+      <div className='p-5 flex items-center gap-40 md:gap-80 justify-between'>
         <h1 className='md:text-2xl text-xl font-semibold text-zinc-400'>Trending</h1>
         <Dropdown title="Filter" options={["tv","movie","all"]} setCategory={setCategory} />
         </div>
